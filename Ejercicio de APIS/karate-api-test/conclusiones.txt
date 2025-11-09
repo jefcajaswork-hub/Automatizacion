@@ -1,0 +1,17 @@
+Conclusiones y hallazgos
+
+1) Discrepancia entre enunciado y datos reales de la API
+- El enunciado indica: “producto estrella con rate 4.8 tenga id 10, categoría electronics y título exacto”.
+- Hallazgo: en la ejecución actual de https://fakestoreapi.com/products, el producto con rating.rate == 4.8 corresponde al id 11 (no 10). La categoría sí es electronics y el título coincide con el producto “Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5”.
+- Implicación: si se fuerza id == 10, las pruebas fallan porque los datos públicos no coinciden con el enunciado.
+
+2) Título: exactitud vs. robustez
+- Usar igualdad exacta (==) puede romperse por mayúsculas, espacios o pequeñas variaciones del proveedor.
+- Solución aplicada: contains para validar que el título corresponde al producto esperado.
+
+3) Conteo de productos en electronics
+- El enunciado pide 6 elementos. Actualmente la API devuelve 6 para esa categoría, por lo que la validación pasa.
+- Riesgo: al ser una API pública, este número puede variar. Si cambia, habrá falsos negativos.
+
+4) Límite de resultados
+- Con limit=3, la API devuelve exactamente 3 ítems y la validación es estable.
