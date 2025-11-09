@@ -1,0 +1,10 @@
+com\orangehrm\ui\LoginPage.class
+com\orangehrm\tasks\UpdateUser.class
+com\orangehrm\tasks\SearchUser.class
+com\orangehrm\interactions\ReplaceText.class
+com\orangehrm\steps\Hooks.class
+com\orangehrm\tasks\Login.class
+com\orangehrm\ui\AdminPage.class
+com\orangehrm\RunCucumberTest.class
+com\orangehrm\steps\LoginStepDefinitions.class
+com\orangehrm\ui\UserManagementPage.class

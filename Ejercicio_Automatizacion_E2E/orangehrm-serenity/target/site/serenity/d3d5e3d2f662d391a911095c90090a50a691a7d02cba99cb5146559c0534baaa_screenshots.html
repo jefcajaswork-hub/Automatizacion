@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="fcf953166087799b4510ff08f51b8ab319f892bd1f87004414a997119a0900dc.html">Actualizaci&oacute;n De Usuario En OrangeHRM</a></span>
+                > <span class="truncate-60"><a
+                    href="d3d5e3d2f662d391a911095c90090a50a691a7d02cba99cb5146559c0534baaa.html">Editar el Username de un usuario existente </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-11-2025 19:55</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Actualización De Usuario En OrangeHRM </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="34658a1663fcf042bd7acb3325affbe4e647c8acd84d0228be2f52e1381e61b9.html">10 To 30 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="6fe0671aeea9e76b6998ee682216d11c7748a4152740df0586f3c256ecb3f5da.html">Chrome
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">Windows
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="65a2df077748f74ccd607af4e962738958bdf672b0d6b0150ae42bcfa475044e.html">Smoke
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="59736924e81ea98f655ac8eba7cd96079d8d80131e0c4360daf32a724d0b38a0.html">Chrome, Windows
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Editar el Username de un usuario existente
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="1141ec46121d78a63833ac6b06f56c13732b82bf56387f0a3635f062bc2983ac.png" title=" Dado que el usuario ingresa a OrangeHRM con credenciales v&aacute;lidas" width="0"/>
+                <img src="1141ec46121d78a63833ac6b06f56c13732b82bf56387f0a3635f062bc2983ac.png" title=" Mar&iacute;a login" width="0"/>
+                <img src="1141ec46121d78a63833ac6b06f56c13732b82bf56387f0a3635f062bc2983ac.png" title=" Mar&iacute;a opens the browser at https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" width="0"/>
+                <img src="1141ec46121d78a63833ac6b06f56c13732b82bf56387f0a3635f062bc2983ac.png" title=" Mar&iacute;a enters 'Admin' into username field" width="0"/>
+                <img src="beb07a7c96fcfc5ebbca9939d490c24f25d50b702598ea6b8a9ee3ede55487e1.png" title=" Mar&iacute;a enters 'Admin' into username field (completed)" width="0"/>
+                <img src="beb07a7c96fcfc5ebbca9939d490c24f25d50b702598ea6b8a9ee3ede55487e1.png" title=" Mar&iacute;a enters 'admin123' into password field" width="0"/>
+                <img src="26ab586107de8255f3ee21c0e5ee5d042ed270333ca85933b890c119599f9dca.png" title=" Mar&iacute;a enters 'admin123' into password field (completed)" width="0"/>
+                <img src="26ab586107de8255f3ee21c0e5ee5d042ed270333ca85933b890c119599f9dca.png" title=" Mar&iacute;a clicks on login button" width="0"/>
+                <img src="1141ec46121d78a63833ac6b06f56c13732b82bf56387f0a3635f062bc2983ac.png" title=" Mar&iacute;a clicks on login button (completed)" width="0"/>
+                <img src="1141ec46121d78a63833ac6b06f56c13732b82bf56387f0a3635f062bc2983ac.png" title=" Mar&iacute;a login (completed)" width="0"/>
+                <img src="1141ec46121d78a63833ac6b06f56c13732b82bf56387f0a3635f062bc2983ac.png" title=" Dado que el usuario ingresa a OrangeHRM con credenciales v&aacute;lidas (completed)" width="0"/>
+                <img src="41357274493fffa258258be01e96c3ccc0c30cad38730a0f60362bf82caa8581.png" title=" Cuando busca al usuario &quot;Jasmine.Morgan&quot;" width="0"/>
+                <img src="41357274493fffa258258be01e96c3ccc0c30cad38730a0f60362bf82caa8581.png" title=" Mar&iacute;a search user" width="0"/>
+                <img src="00506351bf2cfac28e1f089975fa4736819d5686a9883f380d5dd7c363a8ce23.png" title=" Mar&iacute;a clicks on Men&uacute; Admin" width="0"/>
+                <img src="1141ec46121d78a63833ac6b06f56c13732b82bf56387f0a3635f062bc2983ac.png" title=" Mar&iacute;a clicks on Men&uacute; Admin (completed)" width="0"/>
+                <img src="0a4abc8c9285c4e964b1d171f9c15ce9b09166a17ea833686d9c59235c3369df.png" title=" Mar&iacute;a replace text" width="0"/>
+                <img src="c79887cd75c893e33b50b4422aaa708176f8bb42658b35048fd7ab822a3094c6.png" title=" Mar&iacute;a replace text (completed)" width="0"/>
+                <img src="c79887cd75c893e33b50b4422aaa708176f8bb42658b35048fd7ab822a3094c6.png" title=" Mar&iacute;a clicks on Bot&oacute;n Buscar" width="0"/>
+                <img src="61281c988268f71fe1de6779e0e19517402d63bf29dd0eeee1832d6f8cf29f10.png" title=" Mar&iacute;a clicks on Bot&oacute;n Buscar (completed)" width="0"/>
+                <img src="61281c988268f71fe1de6779e0e19517402d63bf29dd0eeee1832d6f8cf29f10.png" title=" Mar&iacute;a search user (completed)" width="0"/>
+                <img src="61281c988268f71fe1de6779e0e19517402d63bf29dd0eeee1832d6f8cf29f10.png" title=" Cuando busca al usuario &quot;Jasmine.Morgan&quot; (completed)" width="0"/>
+                <img src="245405ebf714d6d439e0b320a38d0df17c2d7538732bdfb0c5d642fdfbbd2409.png" title=" Y actualiza el Username a &quot;Jasmine.Morgan.Test&quot;" width="0"/>
+                <img src="245405ebf714d6d439e0b320a38d0df17c2d7538732bdfb0c5d642fdfbbd2409.png" title=" Mar&iacute;a update user" width="0"/>
+                <img src="245405ebf714d6d439e0b320a38d0df17c2d7538732bdfb0c5d642fdfbbd2409.png" title=" Mar&iacute;a clicks on Bot&oacute;n editar para el usuario Jasmine.Morgan" width="0"/>
+                <img src="1141ec46121d78a63833ac6b06f56c13732b82bf56387f0a3635f062bc2983ac.png" title=" Mar&iacute;a clicks on Bot&oacute;n editar para el usuario Jasmine.Morgan (completed)" width="0"/>
+                <img src="5792a3eab9d8b35cbaf7e1fe22c6da013497b8dd9ee821e7c56e21dce9a795a0.png" title=" Mar&iacute;a replace text" width="0"/>
+                <img src="58f2534c3f63b71361ab61a8017a33e659dcf6bc7466a2af695a943a0e79c7c7.png" title=" Mar&iacute;a replace text (completed)" width="0"/>
+                <img src="58f2534c3f63b71361ab61a8017a33e659dcf6bc7466a2af695a943a0e79c7c7.png" title=" Mar&iacute;a clicks on Bot&oacute;n Guardar" width="0"/>
+                <img src="789e78b28e8faca149d8dc5cee740feeeea430233746b1ae725b3a2b22153cf7.png" title=" Mar&iacute;a clicks on Bot&oacute;n Guardar (completed)" width="0"/>
+                <img src="789e78b28e8faca149d8dc5cee740feeeea430233746b1ae725b3a2b22153cf7.png" title=" Mar&iacute;a update user (completed)" width="0"/>
+                <img src="789e78b28e8faca149d8dc5cee740feeeea430233746b1ae725b3a2b22153cf7.png" title=" Y actualiza el Username a &quot;Jasmine.Morgan.Test&quot; (completed)" width="0"/>
+                <img src="64ba18b6d450858126f2a7e9779bbd3fc91508ae0c5b3ff7065809c6f9ff64f4.png" title=" Entonces deber&iacute;a visualizar el mensaje &quot;Success&quot;" width="0"/>
+                <img src="64ba18b6d450858126f2a7e9779bbd3fc91508ae0c5b3ff7065809c6f9ff64f4.png" title=" Mar&iacute;a should see T&iacute;tulo del toast de &eacute;xito with text value that contains: &lt;[Success]&gt;" width="0"/>
+                <img src="e52fd5def82a09cee3db5d7ffa09873691c4758e5856bf731ea6d6419a01cce4.png" title=" Mar&iacute;a should see T&iacute;tulo del toast de &eacute;xito with text value that contains: &lt;[Success]&gt; (completed)" width="0"/>
+                <img src="e52fd5def82a09cee3db5d7ffa09873691c4758e5856bf731ea6d6419a01cce4.png" title=" Entonces deber&iacute;a visualizar el mensaje &quot;Success&quot; (completed): <span class='success-color'>SUCCESS</span>" width="0"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.9.0</span>
+</div>
+</body>
+</html>

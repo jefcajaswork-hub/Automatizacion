@@ -1,0 +1,39 @@
+Conclusiones y hallazgos
+
+1) Infraestructura/Drivers
+ - Para garantizar reproducibilidad, se configuró la propiedad `webdriver.chrome.driver` tanto en serenity.conf (a nivel raíz y en drivers.windows) como en el POM (Surefire/Failsafe) y vía hook @Before.
+
+2) Robustez del flujo
+- Se agregó una espera explícita (WaitUntil) antes de hacer click en el botón de edición del usuario, reduciendo flakiness por renderizado/latencias.
+- Se mantienen esperas para el campo Username y para el toast de éxito.
+- Se corrigió la navegación inicial usando URL absoluta en `Login` (evita error "invalid argument" por URL relativa).
+- Se implementó una interacción `ReplaceText` que limpia inputs (Ctrl+A + Delete + clear + JS) para evitar concatenaciones al sobrescribir valores.
+
+3) Escenario y datos
+- El ejercicio pide actualizar a Jasmine.Morgan → Jasmine.Morgan.Test.
+- En el entorno demo, si no existe ese usuario, se valida con el fallback Jobinsam@6742 → Jobinsam_Test para asegurar reproducibilidad.
+
+Respuestas al enunciado (validación de negocio)
+- Acceso: Login a https://opensource-demo.orangehrmlive.com/web/index.php/auth/login con Admin/admin123 ✔
+- Navegación: Validación de contexto en Admin / User Management ✔
+- Búsqueda: Se localiza el usuario objetivo en la tabla ✔
+- Edición: Se actualiza el campo Username y se guarda ✔
+- Confirmación: Se valida el toast "Success" post-guardado ✔
+
+El flujo completa satisfactoriamente el objetivo funcional solicitado.
+
+4) Recomendaciones
+- Ejecutar en headless en CI y con driver explícito si Selenium Manager falla.
+- Mantener los selectores bajo `ui/` y revisar si hay cambios de UI en OrangeHRM demo.
+- Versionar los reportes Serenity del último run cuando apliquen a la entrega.
+ - Si el input vuelve a resistirse, considerar validar que `value==""` antes de escribir y reintentar el borrado una vez.
+
+5) Versiones usadas (referencia)
+- Java 21.0.8 LTS, Maven 3.9.11, Chrome 142.0.7444.60, ChromeDriver 142.0.7444.61
+- Serenity 3.9.0, Serenity Cucumber 3.9.0, JUnit 4.13.2, Selenium 4.10.0
+
+6) Métricas de la última ejecución
+- Test Cases: 1
+- Passed: 1 | Failed: 0 | Errors: 0 | Pending: 0 | Ignored: 0 | Skipped: 0
+- Éxito: 100%
+- Fuente: target/site/serenity/summary.txt y dashboard target/site/serenity/index.html
